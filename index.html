@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravelQuest</title>
+  <link rel="stylesheet" href="screen.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">TravelQuest ✈</div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="#">Support</a>
+    <a href="itinerary.html">Trips</a>
+  </nav>
+
+  <div class="header-icons">
+    <input type="text">
+    <span>👤</span>
+  </div>
+</header>
+
+<section class="hero-title">
+  <h1>Start Traveling in Style</h1>
+</section>
+
+<section class="search-row">
+  <div>
+    <label>Where are you traveling?</label>
+    <input type="text">
+  </div>
+
+  <div>
+    <label>Dates of travel</label>
+    <input type="text">
+  </div>
+
+  <div>
+    <label>Travel Recommendations</label>
+    <select>
+      <option>Select</option>
+      <option>Dining</option>
+      <option>Hotels</option>
+      <option>Activities</option>
+    </select>
+  </div>
+
+  <a class="small-button" href="dinning.html">Start Planning</a>
+</section>
+
+<img id="slideshow" src="images /Boston.jpg" alt="Travel food photo">
+
+<section class="features">
+  <div class="feature">
+    <div class="circle">🛩</div>
+    <p>Discover thousands of travel recommendations for your next trip!</p>
+  </div>
+
+  <div class="feature">
+    <div class="circle">✔️</div>
+    <p>Plan out your trip with a guided recommendation schedule to fit your needs</p>
+  </div>
+
+  <div class="feature">
+    <div class="circle">📝</div>
+    <p>Save and organize your favorite spots into a personalized itinerary for your trip</p>
+  </div>
+</section>
+
+<section class="cta-card">
+  <div class="cta-text">
+    <h2>Create your itinerary today</h2>
+    <a class="button" href="dinning.html">Start Planning</a>
+  </div>
+
+  <img src="images /Australia.jpg" alt="Naples water view">
+</section>
+
+<footer>
+  <div class="logo">TravelQuest ✈</div>
+</footer>
+
+<script>
+  const images = [
+    "images /Boston.jpg",
+    "images /taco.jpg",
+    "images /Australia.jpg"
+  ];
+
+  let index = 0;
+
+  setInterval(() => {
+    index = (index + 1) % images.length;
+    document.getElementById("slideshow").src = images[index];
+  }, 6000);
+</script>
+
+</body>
+</html>
+

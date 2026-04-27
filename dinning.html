@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dining</title>
+  <link rel="stylesheet" href="screen.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+<header class="main-header">
+  <div class="logo">TravelQuest ✈</div>
+
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="#">Support</a>
+    <a href="itinerary.html">Trips</a>
+  </nav>
+
+  <div class="header-right">
+    <input type="text" placeholder="Search" class="search-bar">
+    <span class="profile-icon">👤</span>
+  </div>
+</header>
+
+<section class="page-header">
+  <h1>Naples, FL</h1>
+  <p>Dining Recommendations</p>
+</section>
+
+<section class="restaurant-card">
+  <div class="restaurant-left">
+    <h2>Cafe Milano</h2>
+    <img src="images /pizza.jpg" alt="Cafe Milano">
+  </div>
+
+  <div class="restaurant-info">
+    <div class="stars">
+      <span class="filled">★</span><span class="filled">★</span><span class="filled">★</span><span class="filled">★</span><span class="empty">★</span>
+    </div>
+
+    <p class="description">
+      Cafe Milano in Naples offers a classic Italian dining experience that feels both upscale and welcoming.
+    </p>
+
+    <p class="details">
+      <strong>Address:</strong> 800 5th Ave S, Naples, FL<br>
+      <strong>Phone:</strong> (239) 692-8480<br>
+      <strong>Menu:</strong> cafemilano.com
+    </p>
+
+    <div class="buttons">
+       <a href="baleen.html" class="button-link">Read Reviews</a>
+
+  <button class="button-link" onclick="openPopup('Cafe Milano')">
+    Add to Itinerary
+  </button>
+
+    </div>
+  </div>
+</section>
+
+<section class="restaurant-card">
+  <div class="restaurant-left">
+    <h2>Forever Fiore Tea Lounge</h2>
+    <img src="images /Tea.jpg" alt="Forever Fiore">
+  </div>
+
+  <div class="restaurant-info">
+    <div class="stars">
+      <span class="filled">★</span><span class="filled">★</span><span class="filled">★</span><span class="empty">★</span><span class="empty">★</span>
+    </div>
+
+    <p class="description">
+      Forever Fiore Tea Lounge feels more like an experience than just a meal, with floral high-tea aesthetics and Instagram-worthy table settings.
+    </p>
+
+    <p class="details">
+      <strong>Address:</strong> 970 5th Ave N, Naples, FL 34102<br>
+      <strong>Phone:</strong> (855) 640-0334
+    </p>
+
+    <div class="buttons">
+      <button>Read Reviews</button>
+      <button class="button-link" onclick="openPopup('Forever Fiore Tea Lounge')">
+  Add to Itinerary
+</button>
+    </div>
+  </div>
+</section>
+
+<section class="restaurant-card">
+  <div class="restaurant-left">
+    <h2>Baleen</h2>
+    <img src="images /beleengirls.jpg" alt="Baleen">
+  </div>
+
+  <div class="restaurant-info">
+    <div class="stars">
+      <span class="filled">★</span><span class="filled">★</span><span class="filled">★</span><span class="filled">★</span><span class="filled">★</span>
+    </div>
+
+    <p class="description">
+      BALEEN is one of the most iconic experience-first restaurants in Naples, located right on the beach at LaPlaya Resort.
+    </p>
+
+    <p class="details">
+      <strong>Address:</strong> 9891 Gulf Shore Dr, Naples, FL 34108<br>
+      <strong>Phone:</strong> (239) 598-5707<br>
+      <strong>Website:</strong> places.singleplatform.com
+    </p>
+<div class="buttons">
+  <a href="beleen.html" class="button-link">Read Reviews</a>
+
+  <button class="button-link" onclick="openPopup('Baleen')">
+    Add to Itinerary
+  </button>
+</div>
+</section>
+
+<footer>
+  <div class="logo">TravelQuest ✈️</div>
+</footer>
+
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup()">×</span>
+
+    <h2 id="popup-text">Added to your itinerary ✈️</h2>
+
+    <a href="itinerary.html" class="button-link">View Itinerary</a>
+  </div>
+</div>
+
+<script>
+  function openPopup(name) {
+    document.getElementById("popup-text").innerText =
+      name + " was added to your itinerary ✈️";
+    document.getElementById("popup").style.display = "flex";
+  }
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+</script>
+
+</body>
+</html>

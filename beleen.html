@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baleen</title>
+
+  <link rel="stylesheet" href="screen.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+<header class="main-header">
+  <div class="logo">TravelQuest ✈</div>
+
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="#">Support</a>
+    <a href="itinerary.html">Trips</a>
+  </nav>
+
+  <div class="header-right">
+    <input type="text" placeholder="Search" class="search-bar">
+    <span class="profile-icon">👤</span>
+  </div>
+</header>
+
+<section class="baleen-header">
+  <h1>Baleen</h1>
+  <div class="stars">★★★★★</div>
+
+  <p>
+    BALEEN is one of the most iconic beachfront dining experiences in Naples,
+    known for its stunning sunset views and relaxed luxury atmosphere.
+  </p>
+
+  <p class="details">
+    <strong>Address:</strong> 9891 Gulf Shore Dr, Naples, FL<br>
+    <strong>Phone:</strong> (239) 598-5707
+  </p>
+
+  <div class="buttons">
+  <button class="btn" onclick="openPopup('Baleen')">Add to Itinerary</button>
+    <a href="itinerary.html" class="btn">View Itinerary</a>
+  </div>
+</section>
+
+<section class="review-card">
+  <div class="review-text">
+    <h2>Anonymous</h2>
+    <p class="date">September 10th, 2025</p>
+    <p>
+      This restaurant exceeded expectations. The sunset views and atmosphere
+      make it perfect for date nights and photos.
+    </p>
+  </div>
+
+  <div class="review-images">
+    <img src="images /beleengirls.jpg" alt="Baleen">
+    <img src="images /trees.jpg" alt="Baleen view">
+  </div>
+</section>
+
+<section class="review-card">
+  <div class="review-text">
+    <h2>Anonymous</h2>
+    <p class="date">July 24th, 2025</p>
+    <p>
+      The seafood was fresh and well presented. While the food is good,
+      the atmosphere is the main highlight.
+    </p>
+  </div>
+
+  <div class="review-images">
+    <img src="images /baleenfood.jpg" alt="Food">
+    <img src="images /menu.jpg" alt="Menu">
+  </div>
+</section>
+
+<section class="review-card">
+  <div class="review-text">
+    <h2>Anonymous</h2>
+    <p class="date">September 10th, 2025</p>
+    <p>
+      This place is all about the experience — beach seating, fire pits,
+      and incredible sunset views.
+    </p>
+  </div>
+
+  <div class="review-images">
+    <img src="images /Sunsetbaleen.jpg" alt="Sunset">
+    <img src="images /baleenimage.jpg" alt="Dinner">
+  </div>
+</section>
+
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">×</span>
+    <p id="popup-text">Added to your itinerary ✈️</p>
+    <a href="itinerary.html" class="btn">View Itinerary</a>
+  </div>
+</div>
+
+<script>
+function openPopup(name) {
+  document.getElementById("popup-text").innerText =
+    name + " was added to your itinerary ✈️";
+  document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+</script>
+
+</body>
+</html>
