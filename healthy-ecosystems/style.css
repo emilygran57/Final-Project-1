@@ -1,0 +1,212 @@
+/* Healthy Ecosystems - shared styles */
+:root {
+  --forest: #1f4d3a;
+  --leaf: #3f8f5f;
+  --moss: #a8c89a;
+  --sand: #f5f1e6;
+  --water: #2b6f8f;
+  --ink: #1d2521;
+  --muted: #5b6660;
+  --card: #ffffff;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--sand);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+a { color: var(--water); }
+
+header {
+  background: var(--forest);
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 5%;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+}
+
+nav a:hover,
+nav a.active {
+  border-bottom: 2px solid var(--moss);
+}
+
+.hero {
+  background: linear-gradient(160deg, var(--forest), var(--leaf) 60%, var(--water));
+  color: #fff;
+  text-align: center;
+  padding: 90px 5%;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  margin: 0 0 12px;
+}
+
+.hero p {
+  max-width: 640px;
+  margin: 0 auto 28px;
+  font-size: 1.15rem;
+}
+
+.button {
+  display: inline-block;
+  background: var(--moss);
+  color: var(--forest);
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.button:hover { background: #fff; }
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px 5%;
+}
+
+section { margin-bottom: 56px; }
+
+h2 {
+  color: var(--forest);
+  font-size: 1.9rem;
+  margin-bottom: 8px;
+}
+
+.lead { color: var(--muted); max-width: 720px; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+  margin-top: 24px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0 4px 14px rgba(31, 77, 58, 0.1);
+}
+
+.card .icon { font-size: 2.2rem; }
+
+.card h3 {
+  color: var(--forest);
+  margin: 10px 0 6px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+  text-align: center;
+}
+
+.stat {
+  background: var(--forest);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 24px 12px;
+}
+
+.stat strong {
+  display: block;
+  font-size: 2rem;
+  color: var(--moss);
+}
+
+.banner {
+  background: var(--water);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 36px;
+  text-align: center;
+}
+
+.banner h2 { color: #fff; }
+
+ul.checklist { list-style: none; padding: 0; }
+
+ul.checklist li {
+  background: var(--card);
+  border-left: 5px solid var(--leaf);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+}
+
+ul.checklist label { cursor: pointer; }
+
+.progress {
+  font-weight: 700;
+  color: var(--forest);
+}
+
+form {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  max-width: 520px;
+}
+
+form label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  border: 1px solid var(--moss);
+  border-radius: 8px;
+  font: inherit;
+}
+
+form button {
+  margin-top: 16px;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.message { color: var(--leaf); font-weight: 600; }
+
+footer {
+  background: var(--forest);
+  color: var(--moss);
+  text-align: center;
+  padding: 24px 5%;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 640px) {
+  header { flex-direction: column; }
+  nav a { margin: 0 10px; }
+  .hero h1 { font-size: 2rem; }
+}
