@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo | Healthy Ecosystems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Mulish:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="page">
+
+<header class="site-header bordered">
+  <a class="logo" href="index.html">
+    <img src="assets/logo.svg" alt="">
+    <span>Healthy<br>Ecosystems</span>
+  </a>
+
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="demo.html" class="active">Demo</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <div class="header-actions">
+    <a href="#">Sign In</a>
+    <a class="pill-button" href="demo.html">Get Started</a>
+  </div>
+</header>
+
+<div class="app">
+  <aside class="sidebar">
+    <h2>Healthy Ecosystems</h2>
+    <nav class="side-nav">
+      <a href="demo.html" class="active"><img src="assets/nav-home.png" alt="">Home</a>
+      <a href="search.html"><img src="assets/nav-search.png" alt="">Search</a>
+      <a><img src="assets/nav-scan.png" alt="">Scan</a>
+      <a><img src="assets/nav-list.png" alt="">List</a>
+      <a><img src="assets/nav-profile.png" alt="">Profile</a>
+    </nav>
+  </aside>
+
+  <main class="app-main">
+    <h1 class="hello">Hello!</h1>
+    <label class="search-field">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="M15 15l5.5 5.5"/></svg>
+      <input id="search" type="search" placeholder="Search" aria-label="Search products">
+      <svg width="17" height="22" viewBox="0 0 17 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="5" y="1" width="7" height="12" rx="3.5"/><path d="M2 10a6.5 6.5 0 0 0 13 0M8.5 16.5V21"/></svg>
+    </label>
+    <div class="chips">
+      <button type="button">Milk</button>
+      <button type="button">Bread</button>
+      <button type="button">Eggs</button>
+      <button type="button">Apples</button>
+      <button type="button">Spinach</button>
+      <button type="button">Doritos</button>
+    </div>
+
+    <section class="score-card">
+      <h2>Ecosystems Score</h2>
+      <p class="big">85/<small>100</small></p>
+      <div class="slide-bar"><div></div></div>
+      <div class="plant"><img src="assets/leaf-plant.png" alt=""></div>
+    </section>
+
+    <section class="metrics">
+      <div class="metric">
+        <img class="icon" src="assets/icon-emissions.png" alt="">
+        <h3>Emissions</h3>
+        <p class="value">0.58 kg</p>
+        <p class="note bad"><img src="assets/arrow-up-red.svg" alt="">10% from last week</p>
+        <img class="chart" src="assets/icon-bar-chart.png" alt="">
+      </div>
+      <div class="metric">
+        <img class="icon" src="assets/icon-local.png" alt="">
+        <h3>Local Dollar Amount</h3>
+        <p class="value">$35.00</p>
+        <p class="note"><img src="assets/arrow-up-green.svg" alt="">10% local spend</p>
+        <img class="chart" src="assets/icon-bar-chart.png" alt="">
+      </div>
+      <div class="metric">
+        <img class="icon" src="assets/icon-health.png" alt="">
+        <h3>Health Score</h3>
+        <p class="value">50/<small>100</small></p>
+        <span class="level">Medium</span>
+        <img class="chart" src="assets/icon-bar-chart.png" alt="">
+      </div>
+      <div class="metric">
+        <img class="icon" src="assets/icon-budget.png" alt="">
+        <h3>Budget</h3>
+        <p class="value">$68/<small>100</small></p>
+        <p class="note">$32 left to spend</p>
+        <div class="budget-bar"><div></div></div>
+        <img class="chart" src="assets/icon-bar-chart.png" alt="">
+      </div>
+    </section>
+
+    <section class="lists">
+      <div class="item-list">
+        <h3>Top Items</h3>
+        <ul>
+          <li><img class="food wide flip" src="assets/steak.png" alt=""><span>Steak</span><span class="pill good">87</span><img class="arrow" src="assets/arrow-forward.png" alt=""></li>
+          <li><img class="food" src="assets/fried-egg.png" alt=""><span>Fried egg</span><span class="pill okay">69</span><img class="arrow" src="assets/arrow-forward.png" alt=""></li>
+          <li><img class="food" src="assets/apple.png" alt=""><span>Apple</span><span class="pill low">91</span><img class="arrow" src="assets/arrow-forward.png" alt=""></li>
+        </ul>
+      </div>
+      <div class="item-list">
+        <h3>Recent Purchases</h3>
+        <ul>
+          <li><img class="food wide flip" src="assets/chips.png" alt=""><span>Chips</span><span class="pill good">87</span><img class="arrow" src="assets/arrow-forward.png" alt=""></li>
+          <li><img class="food" src="assets/rotisserie-chicken.png" alt=""><span>Rotisserie Chicken</span><span class="pill okay">69</span><img class="arrow" src="assets/arrow-forward.png" alt=""></li>
+          <li><img class="food" src="assets/banana.png" alt=""><span>Apple</span><span class="pill low">91</span><img class="arrow" src="assets/arrow-forward.png" alt=""></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="tradeoffs">
+      <h2>Explore the Trade-offs</h2>
+      <p>Compare products to see how different choices affect the environment, local economy, and health.</p>
+      <a class="button-green" href="search.html">Compare Products</a>
+      <img src="assets/leaves.png" alt="">
+    </section>
+  </main>
+</div>
+
+<p class="copyright">© 2026 Healthy Ecosystems</p>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
