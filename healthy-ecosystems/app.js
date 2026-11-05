@@ -195,7 +195,7 @@ const pages = {
     $("#d-local").textContent = money(summary.localDollars);
     $("#d-local-note span").textContent = Math.round(summary.localShare * 100) + "% local spend";
 
-    $("#d-health").innerHTML = summary.health + "/<small>100</small>";
+    renderGauge($("#d-health"), summary.health);
     const hr = rateScore(summary.health);
     setTag($("#d-health-level"), hr, RATING_WORDS.score[hr]);
 

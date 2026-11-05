@@ -665,6 +665,18 @@ h1, h2, h3, p { margin: 0; }
 
 .metric .note img { width: 16.5px; height: 7.36px; transform: rotate(-90deg); }
 .metric .note.bad { color: var(--coral); }
+
+/* Health Score card: gauge with its rating beside it */
+.metric-gauge {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  margin-top: 4px;
+}
+
+.metric .gauge { margin: 14px 0 0; }
+.metric .gauge span { font-size: 34px; text-align: center; text-shadow: none; }
+.metric-gauge .level { margin-bottom: 6px; }
 .metric .note.good img { filter: none; }
 
 .metric .level {
