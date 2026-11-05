@@ -199,13 +199,34 @@ h1, h2, h3, p { margin: 0; }
   font-weight: 700;
 }
 
-.mission {
-  white-space: nowrap;
+.hero-text { position: relative; z-index: 1; flex: 0 0 470px; }
+
+/* Rotating slogans after "app." */
+.slogans {
+  position: relative;
   display: inline-block;
-  color: var(--lime);
+  height: 1.25em;
+  vertical-align: top;
 }
 
+.mission {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--lime);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.mission.active { position: relative; opacity: 1; transform: none; }
+.mission.leaving { opacity: 0; transform: translateY(-18px); }
 .mission img { width: 248px; height: 6px; margin-top: 8px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mission, .gauge .fill { transition: none; }
+}
 
 .hero-text .button { margin-top: 26px; width: 187px; white-space: nowrap; }
 
@@ -331,6 +352,9 @@ h1, h2, h3, p { margin: 0; }
   left: -7px;
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
 }
+
+.gauge .fill { transition: stroke-dasharray 0.8s ease, stroke 0.8s ease; }
+.gauge text { fill: var(--gray-text); font: 600 10px "Albert Sans", Arial, sans-serif; }
 
 .gauge span {
   position: absolute;
@@ -849,6 +873,7 @@ h1, h2, h3, p { margin: 0; }
 @media (max-width: 1240px) {
   .site-header { flex-wrap: wrap; height: auto; padding: 16px; gap: 12px; }
   .main-nav { margin-left: 0; }
+  .hero-text { flex: none; }
   .hero, .about-hero, .why { flex-direction: column; align-items: flex-start; gap: 24px; padding: 32px 24px; }
   .hero-image, .why > img { width: 100%; height: auto; margin: 0; }
   .impact-panel { flex-wrap: wrap; gap: 16px; }

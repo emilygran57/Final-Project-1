@@ -31,12 +31,33 @@ function setTag(el, rating, word) {
   el.textContent = word;
 }
 
-// Semicircle gauge drawn as SVG so it can show any score
-function gaugeSVG(score) {
-  return '<svg viewBox="0 0 140 80" width="140" height="80" aria-hidden="true">' +
-    '<path d="M12 70 A58 58 0 0 1 128 70" pathLength="100" fill="none" stroke="#d9d9d9" stroke-width="14" stroke-linecap="round"/>' +
-    '<path d="M12 70 A58 58 0 0 1 128 70" pathLength="100" fill="none" stroke="#9ad339" stroke-width="14" stroke-linecap="round" stroke-dasharray="' + score + ' 100"/>' +
-    "</svg>";
+// Semicircle gauge drawn as SVG so it can show any score.
+// The arc fills to the score and turns green, yellow or red; the number counts up or down.
+const GAUGE_COLORS = { good: "#9ad339", okay: "#f1d84b", bad: "#ff7d6c" };
+
+function renderGauge(el, score) {
+  if (!el.querySelector("svg")) {
+    el.innerHTML = '<svg viewBox="0 0 140 92" width="140" height="92" aria-hidden="true">' +
+      '<path d="M12 70 A58 58 0 0 1 128 70" pathLength="100" fill="none" stroke="#d9d9d9" stroke-width="14" stroke-linecap="round"/>' +
+      '<path class="fill" d="M12 70 A58 58 0 0 1 128 70" pathLength="100" fill="none" stroke-width="14" stroke-linecap="round" stroke-dasharray="0 100"/>' +
+      '<text x="12" y="90" text-anchor="middle">0</text><text x="128" y="90" text-anchor="middle">100</text>' +
+      "</svg><span>0</span>";
+    el.querySelector(".fill").getBoundingClientRect(); // let the first fill animate from 0
+  }
+  const fill = el.querySelector(".fill");
+  fill.setAttribute("stroke-dasharray", score + " 100");
+  fill.setAttribute("stroke", GAUGE_COLORS[rateScore(score)]);
+  el.setAttribute("aria-label", "Health score " + score + " out of 100");
+
+  const number = el.querySelector("span");
+  const from = Number(number.textContent) || 0;
+  const start = performance.now();
+  cancelAnimationFrame(el.countFrame);
+  (function step(now) {
+    const t = Math.min(1, (now - start) / 800);
+    number.textContent = Math.round(from + (score - from) * (1 - Math.pow(1 - t, 3)));
+    if (t < 1) el.countFrame = requestAnimationFrame(step);
+  })(start);
 }
 
 let toastTimer;
@@ -107,16 +128,31 @@ function renderImpactCards(product, store) {
   setTag($("#emissions-tag"), emissionsRating, RATING_WORDS.emissions[emissionsRating]);
   $("#local-value").textContent = money(s.localDollars);
   setTag($("#local-tag"), localRating, RATING_WORDS.local[localRating]);
-  $("#health-gauge").innerHTML = gaugeSVG(s.health) + "<span>" + s.health + "</span>";
+  renderGauge($("#health-gauge"), s.health);
   setTag($("#health-tag"), healthRating, RATING_WORDS.score[healthRating]);
   $("#eco-value").innerHTML = s.ecosystem + "/<small>100</small>";
   setTag($("#eco-tag"), rateScore(s.ecosystem), RATING_WORDS.score[rateScore(s.ecosystem)]);
   return s;
 }
 
+// Home hero: cycle through the slogans after "app."
+function rotateSlogans() {
+  const slogans = $all(".slogans .mission");
+  let current = 0;
+  setInterval(function () {
+    const leaving = slogans[current];
+    current = (current + 1) % slogans.length;
+    leaving.classList.add("leaving");
+    leaving.classList.remove("active");
+    slogans[current].classList.add("active");
+    setTimeout(function () { leaving.classList.remove("leaving"); }, 500);
+  }, 3000);
+}
+
 // ---------- Pages ----------
 const pages = {
   home: function () {
+    rotateSlogans();
     const productSelect = $("#product");
     const storeSelect = $("#store");
     fillSelect(productSelect, PRODUCTS, "potato-chips");
