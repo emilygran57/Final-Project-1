@@ -410,6 +410,30 @@ h1, h2, h3, p { margin: 0; }
   font-size: 20px;
 }
 
+/* Scroll reveal: the line draws across, then each step eases in one after another */
+.steps-line.reveal-ready::before {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.2s ease-out;
+}
+
+.steps-line.reveal-ready .step {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.steps-line.revealed::before { transform: scaleX(1); }
+.steps-line.revealed .step { opacity: 1; transform: none; }
+.steps-line.revealed .step:nth-child(2) { transition-delay: 0.3s; }
+.steps-line.revealed .step:nth-child(3) { transition-delay: 0.6s; }
+.steps-line.revealed .step:nth-child(4) { transition-delay: 0.9s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .steps-line.reveal-ready::before,
+  .steps-line.reveal-ready .step { transition: none; }
+}
+
 .step p {
   width: 215px;
   margin: 14px auto 0;
