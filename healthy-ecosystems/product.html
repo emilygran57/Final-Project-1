@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product | Healthy Ecosystems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Mulish:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+
+<body data-page="product">
+<div class="page">
+
+<header class="site-header bordered">
+  <a class="logo" href="index.html">
+    <img src="assets/logo.svg" alt="">
+    <span>Healthy<br>Ecosystems</span>
+  </a>
+
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="demo.html" class="active">Demo</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <div class="header-actions">
+    <a href="profile.html">Sign In</a>
+    <a class="pill-button" href="demo.html">Get Started</a>
+  </div>
+</header>
+
+<div class="app">
+  <aside class="sidebar">
+    <h2>Healthy Ecosystems</h2>
+    <nav class="side-nav">
+      <a href="demo.html"><img src="assets/nav-home.png" alt="">Home</a>
+      <a href="search.html" class="active"><img src="assets/nav-search.png" alt="">Search</a>
+      <a href="scan.html"><img src="assets/nav-scan.png" alt="">Scan</a>
+      <a href="list.html"><img src="assets/nav-list.png" alt="">List</a>
+      <a href="profile.html"><img src="assets/nav-profile.png" alt="">Profile</a>
+    </nav>
+  </aside>
+
+  <main class="app-main">
+    <a class="back-link" href="search.html">← Back to search</a>
+    <section class="product-hero">
+      <div id="p-image"></div>
+      <div>
+        <p class="eyebrow" id="p-category"></p>
+        <h1 id="p-name"></h1>
+        <p class="price" id="p-price"></p>
+        <div class="field inline">
+          <label for="store">Store</label>
+          <select id="store" class="select store"></select>
+        </div>
+        <div class="product-actions">
+          <button class="button" id="add" type="button">Add to list</button>
+          <a class="button-green" id="compare-link" href="compare.html">Compare</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="stat-cards">
+      <div class="stat-card">
+        <h3>Emissions<br>(per purchase)</h3>
+        <p class="value small-top" id="emissions-value"></p>
+        <span class="tag" id="emissions-tag"></span>
+      </div>
+      <div class="stat-card">
+        <h3>Local Dollar Amount</h3>
+        <p class="value" id="local-value"></p>
+        <span class="tag" id="local-tag"></span>
+      </div>
+      <div class="stat-card">
+        <h3>Health Score</h3>
+        <div class="gauge" id="health-gauge"></div>
+        <span class="tag" id="health-tag"></span>
+      </div>
+      <div class="stat-card">
+        <h3>Ecosystem Score</h3>
+        <p class="value" id="eco-value"></p>
+        <span class="tag" id="eco-tag"></span>
+      </div>
+    </div>
+
+    <h2 class="sub-title">Better swaps</h2>
+    <div class="product-cards results" id="swaps"></div>
+    <p class="sample-note">Scores use sample data for this demo.</p>
+  </main>
+</div>
+
+<p class="copyright">© 2026 Healthy Ecosystems</p>
+</div>
+<script src="data.js?v=3"></script>
+<script src="app.js?v=3"></script>
+</body>
+</html>

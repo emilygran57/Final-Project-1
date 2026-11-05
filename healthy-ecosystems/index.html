@@ -7,10 +7,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Mulish:wght@400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 
-<body>
+<body data-page="home">
 <div class="page">
 
 <header class="site-header">
@@ -26,7 +26,7 @@
   </nav>
 
   <div class="header-actions">
-    <a href="#">Sign In</a>
+    <a href="profile.html">Sign In</a>
     <a class="pill-button" href="demo.html">Get Started</a>
   </div>
 </header>
@@ -45,43 +45,38 @@
     <img src="assets/salad.png" alt="Bowl of salad">
     <div class="field">
       <label for="product">Product</label>
-      <select id="product" class="select product">
-        <option>Potato Chips</option>
-        <option>Apples</option>
-        <option>Wheat Bread</option>
-        <option>Greek Yogurt</option>
-      </select>
+      <select id="product" class="select product"></select>
     </div>
     <div class="field">
       <label for="store">Store</label>
-      <select id="store" class="select store">
-        <option>Meijer</option>
-      </select>
+      <select id="store" class="select store"></select>
     </div>
-    <a class="button" href="demo.html">Calculate Impact</a>
+    <button class="button" id="calculate" type="button">Calculate Impact</button>
   </div>
 
   <div class="stat-cards">
     <div class="stat-card">
-      <h3>Emissions<br>(Monthly)</h3>
-      <p class="value" style="margin-top:8px">0.58 kg</p>
-      <p class="trend"><img src="assets/triangle-up.svg" alt="">high</p>
+      <h3>Emissions<br>(per purchase)</h3>
+      <p class="value small-top" id="emissions-value"></p>
+      <span class="tag" id="emissions-tag"></span>
     </div>
     <div class="stat-card">
       <h3>Local Dollar Amount</h3>
-      <p class="value">$3.50</p>
-      <span class="tag high">high</span>
+      <p class="value" id="local-value"></p>
+      <span class="tag" id="local-tag"></span>
     </div>
     <div class="stat-card">
       <h3>Health Score</h3>
-      <div class="gauge"><img src="assets/health-gauge.svg" alt=""><span>85</span></div>
-      <span class="tag great">great</span>
+      <div class="gauge" id="health-gauge"></div>
+      <span class="tag" id="health-tag"></span>
     </div>
     <div class="stat-card">
       <h3>Ecosystem Score</h3>
-      <p class="value">78/<small>100</small></p>
+      <p class="value" id="eco-value"></p>
+      <span class="tag" id="eco-tag"></span>
     </div>
   </div>
+  <p class="impact-footer"><a id="details-link" href="product.html">See full product details <img src="assets/arrow-right.svg" alt=""></a> <span>Scores use sample data for this demo.</span></p>
 </section>
 
 <section class="how">
@@ -111,26 +106,7 @@
 <section class="products">
   <h2 class="section-title">Explore Products</h2>
   <p>Learn more about your impact by checking out everyday products</p>
-  <div class="product-cards">
-    <div class="product-card">
-      <img class="photo" src="assets/apples.png" alt="Red apples">
-      <h3>Apples</h3>
-      <p class="category">Produce: <span class="score good">98</span></p>
-      <a class="explore-link" href="demo.html">Explore Impact <img src="assets/arrow-right.svg" alt=""></a>
-    </div>
-    <div class="product-card">
-      <img class="photo" src="assets/wheat-bread.png" alt="Sliced wheat bread">
-      <h3>Wheat Bread</h3>
-      <p class="category">Pantry: <span class="score okay">75</span></p>
-      <a class="explore-link" href="demo.html">Explore Impact <img src="assets/arrow-right.svg" alt=""></a>
-    </div>
-    <div class="product-card">
-      <img class="photo" src="assets/greek-yogurt.png" alt="Bowl of Greek yogurt">
-      <h3>Greek Yogurt</h3>
-      <p class="category">Dairy: <span class="score good">81</span></p>
-      <a class="explore-link" href="demo.html">Explore Impact <img src="assets/arrow-right.svg" alt=""></a>
-    </div>
-  </div>
+  <div class="product-cards" id="featured"></div>
   <a class="button-green" href="search.html">Explore more products</a>
 </section>
 
@@ -142,8 +118,8 @@
 </section>
 
 <footer class="site-footer"></footer>
-
 </div>
-
+<script src="data.js?v=3"></script>
+<script src="app.js?v=3"></script>
 </body>
 </html>
