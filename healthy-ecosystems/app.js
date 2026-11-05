@@ -149,10 +149,25 @@ function rotateSlogans() {
   }, 3000);
 }
 
+// Home: reveal the "How Healthy Ecosystems Works" steps one after another on scroll
+function revealSteps() {
+  const section = $(".steps-line");
+  if (!section || !("IntersectionObserver" in window)) return;
+  section.classList.add("reveal-ready");
+  const observer = new IntersectionObserver(function (entries) {
+    if (entries[0].isIntersecting) {
+      section.classList.add("revealed");
+      observer.disconnect();
+    }
+  }, { threshold: 0.35 });
+  observer.observe(section);
+}
+
 // ---------- Pages ----------
 const pages = {
   home: function () {
     rotateSlogans();
+    revealSteps();
     const productSelect = $("#product");
     const storeSelect = $("#store");
     fillSelect(productSelect, PRODUCTS, "potato-chips");
