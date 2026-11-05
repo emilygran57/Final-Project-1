@@ -4,77 +4,146 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home | Healthy Ecosystems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Mulish:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+<div class="page">
 
-<header>
-  <div class="logo">🌿 Healthy Ecosystems</div>
+<header class="site-header">
+  <a class="logo" href="index.html">
+    <img src="assets/logo.svg" alt="">
+    <span>Healthy<br>Ecosystems</span>
+  </a>
 
-  <nav>
+  <nav class="main-nav">
     <a href="index.html" class="active">Home</a>
-    <a href="ecosystems.html">Ecosystems</a>
-    <a href="threats.html">Threats</a>
-    <a href="take-action.html">Take Action</a>
+    <a href="demo.html">Demo</a>
+    <a href="about.html">About</a>
   </nav>
+
+  <div class="header-actions">
+    <a href="#">Sign In</a>
+    <a class="pill-button" href="demo.html">Get Started</a>
+  </div>
 </header>
 
 <section class="hero">
-  <h1>Healthy Ecosystems, Healthy Planet</h1>
-  <p>Forests, oceans, wetlands and grasslands clean our air and water, grow our food and steady our climate. Learn how they work and how you can help keep them thriving.</p>
-  <a class="button" href="take-action.html">Get Involved</a>
+  <div class="hero-text">
+    <h1>Healthy<br>ecosystems is<br>more than a mobile<br>app. <span class="mission">It’s a mission.<img src="assets/mission-underline.svg" alt=""></span></h1>
+    <a class="button" href="demo.html">Explore the Demo</a>
+  </div>
+  <img class="hero-image" src="assets/hero-groceries.png" alt="A paper bag overflowing with fresh vegetables and fruit">
 </section>
 
-<main>
-  <section>
-    <h2>What makes an ecosystem healthy?</h2>
-    <p class="lead">A healthy ecosystem is one that can sustain itself over time and recover from disturbances like storms, droughts or fires. Scientists look for a few key signs:</p>
+<section class="impact">
+  <h2 class="section-title">Learn about your impact for</h2>
+  <div class="impact-panel">
+    <img src="assets/salad.png" alt="Bowl of salad">
+    <div class="field">
+      <label for="product">Product</label>
+      <select id="product" class="select product">
+        <option>Potato Chips</option>
+        <option>Apples</option>
+        <option>Wheat Bread</option>
+        <option>Greek Yogurt</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="store">Store</label>
+      <select id="store" class="select store">
+        <option>Meijer</option>
+      </select>
+    </div>
+    <a class="button" href="demo.html">Calculate Impact</a>
+  </div>
 
-    <div class="cards">
-      <div class="card">
-        <div class="icon">🦋</div>
-        <h3>Biodiversity</h3>
-        <p>A wide variety of plants, animals, fungi and microbes, each filling a role in the food web.</p>
+  <div class="stat-cards">
+    <div class="stat-card">
+      <h3>Emissions<br>(Monthly)</h3>
+      <p class="value" style="margin-top:8px">0.58 kg</p>
+      <p class="trend"><img src="assets/triangle-up.svg" alt="">high</p>
+    </div>
+    <div class="stat-card">
+      <h3>Local Dollar Amount</h3>
+      <p class="value">$3.50</p>
+      <span class="tag high">high</span>
+    </div>
+    <div class="stat-card">
+      <h3>Health Score</h3>
+      <div class="gauge"><img src="assets/health-gauge.svg" alt=""><span>85</span></div>
+      <span class="tag great">great</span>
+    </div>
+    <div class="stat-card">
+      <h3>Ecosystem Score</h3>
+      <p class="value">78/<small>100</small></p>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <h2 class="section-title">How Healthy Ecosystems Works</h2>
+  <div class="steps-line">
+    <div class="steps">
+      <div class="step">
+        <div class="step-circle"><img class="outer" src="assets/step1-outer.svg" alt=""><img class="inner" src="assets/step1-inner.svg" alt=""><span>01. Understand</span></div>
+        <p>Discover what matters most to communities and the challenges they face.</p>
       </div>
-      <div class="card">
-        <div class="icon">💧</div>
-        <h3>Clean Water</h3>
-        <p>Rivers, lakes and groundwater free from excess nutrients, sediment and pollution.</p>
+      <div class="step">
+        <div class="step-circle"><img class="outer" src="assets/step2-outer.svg" alt=""><img class="inner" src="assets/step2-inner.svg" alt=""><span>02. Explore</span></div>
+        <p>Learn how everyday choices influence the environment, local economies, and community health.</p>
       </div>
-      <div class="card">
-        <div class="icon">🌱</div>
-        <h3>Rich Soil</h3>
-        <p>Living soil that stores carbon, holds water and recycles nutrients for new growth.</p>
+      <div class="step">
+        <div class="step-circle"><img class="outer" src="assets/step3-outer.svg" alt=""><img class="inner" src="assets/step3-inner.svg" alt=""><span>03. Reveal</span></div>
+        <p>Uncover the connections and trade-offs between individual choices and broader ecosystem impacts.</p>
       </div>
-      <div class="card">
-        <div class="icon">🔄</div>
-        <h3>Resilience</h3>
-        <p>The ability to bounce back after a disturbance instead of collapsing into a degraded state.</p>
+      <div class="step">
+        <div class="step-circle"><img class="outer" src="assets/step4-outer.svg" alt=""><img class="inner" src="assets/step4-inner.svg" alt=""><span>04. Take Action</span></div>
+        <p>Turn shared insights into meaningful changes that support healthier, more equitable communities.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <h2>Why it matters</h2>
-    <p class="lead">Nature provides "ecosystem services" that people depend on every day.</p>
-    <div class="stats">
-      <div class="stat"><strong>~50%</strong>of the oxygen we breathe comes from the ocean</div>
-      <div class="stat"><strong>75%</strong>of food crops rely at least partly on pollinators</div>
-      <div class="stat"><strong>1/3</strong>of the world's largest cities get drinking water from protected forests</div>
+<section class="products">
+  <h2 class="section-title">Explore Products</h2>
+  <p>Learn more about your impact by checking out everyday products</p>
+  <div class="product-cards">
+    <div class="product-card">
+      <img class="photo" src="assets/apples.png" alt="Red apples">
+      <h3>Apples</h3>
+      <p class="category">Produce: <span class="score good">98</span></p>
+      <a class="explore-link" href="demo.html">Explore Impact <img src="assets/arrow-right.svg" alt=""></a>
     </div>
-  </section>
+    <div class="product-card">
+      <img class="photo" src="assets/wheat-bread.png" alt="Sliced wheat bread">
+      <h3>Wheat Bread</h3>
+      <p class="category">Pantry: <span class="score okay">75</span></p>
+      <a class="explore-link" href="demo.html">Explore Impact <img src="assets/arrow-right.svg" alt=""></a>
+    </div>
+    <div class="product-card">
+      <img class="photo" src="assets/greek-yogurt.png" alt="Bowl of Greek yogurt">
+      <h3>Greek Yogurt</h3>
+      <p class="category">Dairy: <span class="score good">81</span></p>
+      <a class="explore-link" href="demo.html">Explore Impact <img src="assets/arrow-right.svg" alt=""></a>
+    </div>
+  </div>
+  <a class="button-green" href="search.html">Explore more products</a>
+</section>
 
-  <section class="banner">
-    <h2>Explore the world's ecosystems</h2>
-    <p>From coral reefs to boreal forests, discover what lives there and why each one is important.</p>
-    <a class="button" href="ecosystems.html">Explore Ecosystems</a>
-  </section>
-</main>
+<section class="cta home-cta">
+  <img src="assets/sprout-icon.png" alt="">
+  <h2>Every Choice Makes a Difference</h2>
+  <p>Explore the connections behind your everyday choices and discover your impact on a healthier, more sustainable future.</p>
+  <a class="button dark-text" href="demo.html">Explore Demo</a>
+</section>
 
-<footer>
-  <p>Healthy Ecosystems &copy; 2026 &middot; Protecting the living systems that protect us.</p>
-</footer>
+<footer class="site-footer"></footer>
+
+</div>
 
 </body>
 </html>
