@@ -174,7 +174,7 @@ function renderLeaderboard(points, ecosystem) {
 
   $("#pf-rank").textContent = "Leaderboard #" + rank;
   $("#pf-next").textContent = ahead
-    ? (ahead.points - points + 1) + " points to pass " + ahead.name
+    ? (ahead.points - points + 1) + (ahead.points - points + 1 === 1 ? " point" : " points") + " to pass " + ahead.name
     : "You're in first place!";
 
   $("#pf-leaderboard").innerHTML = players.map(function (player, i) {
