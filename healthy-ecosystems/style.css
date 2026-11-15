@@ -1210,6 +1210,62 @@ h1, h2, h3, p { margin: 0; }
 .profile-numbers span { font-size: 16px; font-weight: 600; }
 .item-list.wide { height: auto; margin: 25px 115px 0 11px; padding-bottom: 24px; }
 
+.leaderboard {
+  margin: 25px 115px 0 11px;
+  padding: 30px 29px 24px;
+  border-radius: 15px;
+  background: var(--cream);
+}
+
+.leaderboard-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.leaderboard-head h3 { margin-left: 6px; font-size: 24px; font-weight: 700; }
+.leaderboard-head p { color: var(--gray-text); font-size: 15px; }
+.leaderboard ol { margin: 13px 0 0; padding: 0; list-style: none; border-top: 1px solid #b1b1b1; }
+
+.leaderboard li {
+  display: grid;
+  grid-template-columns: 36px 44px 1fr 43px 80px;
+  align-items: center;
+  gap: 12px;
+  height: 56px;
+  padding: 0 8px;
+  border-bottom: 1px solid #b1b1b1;
+  font-size: 16px;
+}
+
+.leaderboard li.you { border-radius: 10px; background: rgba(154, 211, 57, 0.3); font-weight: 700; }
+.leaderboard li.you small { font-size: 13px; font-weight: 500; }
+
+.leaderboard .rank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-weight: 700;
+}
+
+.leaderboard .top1 .rank { background: #f1d84b; }
+.leaderboard .top2 .rank { background: #d9d9d9; }
+.leaderboard .top3 .rank { background: #e8b38a; }
+
+.player-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--mint);
+  font-size: 14px;
+  font-weight: 700;
+  object-fit: cover;
+}
+
+.player-points { text-align: right; font-weight: 700; }
+.leaderboard .explore-link { margin-top: 18px; }
+
 /* Scan page */
 .scan-card {
   margin: 20px 0 0 11px;
@@ -1230,6 +1286,9 @@ h1, h2, h3, p { margin: 0; }
   .product-hero .hero-photo { width: 100%; }
   .app-main .stat-cards { grid-template-columns: repeat(2, 1fr); padding: 0; }
   .comparison, .list-totals { grid-template-columns: 1fr; }
-  .profile-card, .profile-numbers, .item-list.wide { margin-right: 0; }
+  .profile-card, .profile-numbers, .item-list.wide, .leaderboard { margin-right: 0; }
+  .leaderboard { padding: 20px 12px; }
+  .leaderboard li { grid-template-columns: 30px 40px 1fr 43px 64px; gap: 8px; }
+  .leaderboard-head { flex-direction: column; }
   .profile-numbers { gap: 20px; flex-wrap: wrap; }
 }

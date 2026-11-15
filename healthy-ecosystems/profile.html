@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Mulish:wght@400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 
 <body data-page="profile">
@@ -49,13 +49,21 @@
       <div class="avatar"><img src="assets/profile-photo.png" alt="Profile photo"></div>
       <div>
         <h2>John Doe</h2>
-        <p>Leaderboard #3</p>
+        <p id="pf-rank">Leaderboard #3</p>
       </div>
     </section>
     <section class="profile-numbers">
       <div><strong id="pf-eco"></strong><span>Ecosystems Score</span></div>
       <div><strong id="pf-points"></strong><span>Points</span></div>
       <div><strong id="pf-health"></strong><span>Health Score</span></div>
+    </section>
+    <section class="leaderboard">
+      <div class="leaderboard-head">
+        <h3>Leaderboard</h3>
+        <p id="pf-next"></p>
+      </div>
+      <ol id="pf-leaderboard"></ol>
+      <a class="explore-link" href="search.html">Add better choices to climb <img src="assets/arrow-right.svg" alt=""></a>
     </section>
     <section class="item-list wide">
       <h3>Top Items</h3>
@@ -71,7 +79,7 @@
 
 <p class="copyright">© 2026 Healthy Ecosystems</p>
 </div>
-<script src="data.js?v=6"></script>
-<script src="app.js?v=6"></script>
+<script src="data.js?v=7"></script>
+<script src="app.js?v=7"></script>
 </body>
 </html>

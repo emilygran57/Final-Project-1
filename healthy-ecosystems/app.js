@@ -163,6 +163,34 @@ function revealSteps() {
   observer.observe(section);
 }
 
+// Profile: rank you against the sample players by points
+function renderLeaderboard(points, ecosystem) {
+  const you = { name: "John Doe", points: points, ecosystem: ecosystem, you: true };
+  const players = LEADERBOARD.concat([you]).sort(function (a, b) {
+    return b.points - a.points || (a.you ? 1 : b.you ? -1 : 0);
+  });
+  const rank = players.indexOf(you) + 1;
+  const ahead = players[rank - 2];
+
+  $("#pf-rank").textContent = "Leaderboard #" + rank;
+  $("#pf-next").textContent = ahead
+    ? (ahead.points - points + 1) + (ahead.points - points + 1 === 1 ? " point" : " points") + " to pass " + ahead.name
+    : "You're in first place!";
+
+  $("#pf-leaderboard").innerHTML = players.map(function (player, i) {
+    const initials = player.name.split(" ").map(function (part) { return part[0]; }).join("");
+    return '<li class="' + (player.you ? "you" : "") + (i < 3 ? " top" + (i + 1) : "") + '">' +
+      '<span class="rank">' + (i + 1) + "</span>" +
+      (player.you
+        ? '<img class="player-photo" src="assets/profile-photo.png" alt="">'
+        : '<span class="player-photo">' + escapeHTML(initials) + "</span>") +
+      '<span class="player-name">' + escapeHTML(player.name) + (player.you ? " <small>(you)</small>" : "") + "</span>" +
+      '<span class="pill ' + rateScore(player.ecosystem) + '" title="Ecosystems Score">' + player.ecosystem + "</span>" +
+      '<span class="player-points">' + player.points + " pts</span>" +
+      "</li>";
+  }).join("");
+}
+
 // ---------- Pages ----------
 const pages = {
   home: function () {
@@ -368,13 +396,14 @@ const pages = {
   profile: function () {
     const summary = summarizeList(loadList());
     const lists = topAndRecent(summary);
-    const points = summary.rows.reduce(function (total, row) { return total + Math.round(row.score.ecosystem / 10) * 5; }, 0);
+    const points = listPoints(summary);
 
     $("#pf-eco").textContent = summary.ecosystem;
     $("#pf-points").textContent = points;
     $("#pf-health").textContent = summary.health;
     $("#pf-top").innerHTML = itemRows(lists.top);
     $("#pf-recent").innerHTML = itemRows(lists.recent);
+    renderLeaderboard(points, summary.ecosystem);
   },
 
   scan: function () {

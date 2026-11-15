@@ -36,6 +36,22 @@ const SAMPLE_LIST = [
   { id: "potato-chips", store: "meijer" }
 ];
 
+// Sample players for the Profile leaderboard (made-up people for the demo)
+const LEADERBOARD = [
+  { name: "Maya R.", points: 310, ecosystem: 82 },
+  { name: "Jordan T.", points: 240, ecosystem: 78 },
+  { name: "Priya S.", points: 160, ecosystem: 71 },
+  { name: "Leo M.", points: 140, ecosystem: 66 },
+  { name: "Sam K.", points: 110, ecosystem: 63 },
+  { name: "Ava L.", points: 85, ecosystem: 58 },
+  { name: "Noah B.", points: 70, ecosystem: 52 }
+];
+
+// Points: 5 for every 10 ecosystem-score points of each item on your list
+function listPoints(summary) {
+  return summary.rows.reduce(function (total, row) { return total + Math.round(row.score.ecosystem / 10) * 5; }, 0);
+}
+
 function findProduct(id) {
   return PRODUCTS.find(function (p) { return p.id === id; });
 }
