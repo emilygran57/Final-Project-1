@@ -191,6 +191,17 @@ function renderLeaderboard(points, ecosystem) {
   }).join("");
 }
 
+// Home calculator: show a photo of the chosen product, fading it in on each change
+function showImpactPhoto(product) {
+  const frame = $("#impact-photo");
+  if (frame.dataset.product === product.id) return;
+  frame.dataset.product = product.id;
+  frame.innerHTML = productImage(product, "impact-image");
+  frame.classList.remove("fade-in");
+  void frame.offsetWidth;
+  frame.classList.add("fade-in");
+}
+
 // ---------- Pages ----------
 const pages = {
   home: function () {
@@ -204,6 +215,7 @@ const pages = {
     function calculate() {
       const product = findProduct(productSelect.value);
       renderImpactCards(product, findStore(storeSelect.value));
+      showImpactPhoto(product);
       $("#details-link").href = "product.html?id=" + product.id + "&store=" + storeSelect.value;
     }
 
