@@ -858,7 +858,7 @@ h1, h2, h3, p { margin: 0; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 27%;
+  object-position: center;
 }
 
 .mission-box {
@@ -927,6 +927,8 @@ h1, h2, h3, p { margin: 0; }
   .site-header { flex-wrap: wrap; height: auto; padding: 16px; gap: 12px; }
   .main-nav { margin-left: 0; }
   .hero-text { flex: none; }
+  .photo-stack { width: min(378px, 100%); }
+  .photo-stack::before { width: calc(100% - 55px); }
   .hero, .about-hero, .why { flex-direction: column; align-items: flex-start; gap: 24px; padding: 32px 24px; }
   .hero-image, .why > img { width: 100%; height: auto; margin: 0; }
   .impact-panel { flex-wrap: wrap; gap: 16px; }
